@@ -1,9 +1,14 @@
 :root {
   --black: #000000;
+  --dark-grey: #404040;
   --white: #ffffff;
-  --almostWhite: #f6f6f6;
-  --paleGold: #caaa6c;
+  --almost-white: #f6f6f6;
+  --light-grey: #dedede;
+  --misty-grey: #c2c2c2; 
+  --pale-gold: #caaa6c;
   --silver: #c4c4c4;
+  --vivid-red: #ff0f12;
+
 }
 
 @font-face {
@@ -71,6 +76,19 @@ img {
   margin-right: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .adbro-thuyenxua {
   width: 903px;
   height: 422px;
@@ -81,6 +99,7 @@ img {
   position: relative;
   width: 100%;
   height: 422px;
+  margin-bottom: 77px;
   background-color: var(--silver);
   overflow: hidden;
 }
@@ -101,9 +120,9 @@ img {
 .adbro-thuyenxua__choice-btn {
   padding: 8px 40px;
   margin-top: 42px;
-  border: 3px solid black;
+  border: 3px solid var(--black);
   text-transform: uppercase;
-  color: #CAAA6C;
+  color: var(--pale-gold);
   font-weight: 700;
 }
 
@@ -120,10 +139,10 @@ img {
   position: absolute;
   bottom: 15px;
   left: 27px;
-  color: #FF0F12;
+  color: var(--vivid-red);
   text-transform: uppercase;
   font-weight: 700;
-  background-color: white;
+  background-color: var(--white);
   border: none;
   border-radius: 13px;
   padding: 4px 12px;
@@ -175,4 +194,82 @@ img {
 
 .adbro-thuyenxua__close {
   margin-bottom: 7px;
+}
+
+.adbro-slider {
+  padding: 14px 8px 14px 15px;
+  width: 775px;
+  margin: 0 auto 30px;
+  border: 1px solid var(--light-grey);
+  border-radius: 3px;
+}
+
+.adbro-slider__list {
+  display: flex;
+  grid-gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.adbro-slider__item {
+  position: relative;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25)) drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25));
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
+.adbro-slider__link {
+  display: block;
+  text-decoration: none;
+}
+
+.adbro-slider__link picture {
+  display: block;
+  height: 180px;
+  width: 180px;
+}
+
+.adbro-slider__slide-img {
+  height: 180px;
+  width: 180px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.adbro-slider__logo-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 5px;
+}
+
+.adbro-slider__span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 164px;
+  height: 43px;
+  text-align: center;
+  letter-spacing: -0.4px;
+}
+
+.adbro-slider__span,
+.adbro-slider__btn {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark-grey);
+  margin: 0 auto;
+}
+
+
+.adbro-slider__btn {
+  display: block;
+  padding: 10px 44px;
+  margin-bottom: 10px;
+  background-color: var(--almost-white);
+  border-radius: 3px;
+  border: 1px solid var(--misty-grey);
+  text-transform: uppercase;
 }
