@@ -92,13 +92,12 @@ img {
 .adbro-thuyenxua {
   width: 903px;
   height: 422px;
-  
 }
 
 .adbro-thuyenxua__promo {
   position: relative;
   width: 100%;
-  height: 422px;
+  height: 412px;
   margin-bottom: 77px;
   background-color: var(--silver);
   overflow: hidden;
@@ -107,33 +106,76 @@ img {
 .adbro-thuyenxua__content {
   position: absolute;
   left: 50%;
-  transform: translate(-50%);
+  margin-left: -350px;
   bottom: 0;
   padding-left: 80px;
   padding-right: 72px;
   width: 700px;
-  background: url('../img/thuyenxua-bg.svg') no-repeat center top;
   height: 95px;
+}
+
+.adbro-thuyenxua__bg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -350px;
+  width: 700px;
+  height: 95px;
+  background: url('../img/thuyenxua-bg.svg') no-repeat center top;
   background-size: cover;
+  animation: slideInUp 0.8s ease-out 0s 1 forwards;
 }
 
 .adbro-thuyenxua__choice-btn {
+  position: absolute;
+  left: 80px;
+  width: 226px;
+  height: 37px;
   padding: 8px 40px;
   margin-top: 42px;
   border: 3px solid var(--black);
   text-transform: uppercase;
   color: var(--pale-gold);
   font-weight: 700;
+  animation: zoomOut .7s .7s both, zoomIn 3s ease-out  2s infinite;
 }
 
 .adbro-thuyenxua__bottle-img {
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translate(-50%);
+  margin-left: -41px;
   width: 79px;
   height: 140px;
+  animation: fadeInUp .8s ease-out .5s both;
 }
+
+.adbro-thuyenxua__fish-img {
+  position: absolute;
+}
+
+.adbro-thuyenxua__fish-img:first-of-type {
+  top: -10px;
+  right: 121px;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(2) {
+  top: -22px;
+  right: 237px;
+  transform: rotate(45deg);
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(3) {
+  top: 0px;
+  left: 122px;
+  transform: rotate(-3deg) scale(-1, 1);
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(4) {
+  top: -10px;
+  left: 218px;
+  transform: rotate(-51deg) scale(-1, 1);
+} 
 
 .adbro-thuyenxua__try-btn {
   position: absolute;
@@ -150,15 +192,16 @@ img {
   font-size: 11px;
   line-height: 14px;
   letter-spacing: -0.4px;
+  animation: shake 4s 2s infinite;
 }
 
 .adbro-thuyenxua__logo {
   position: absolute;
-  left: 63.5%;
+  left: 59.5%;
   bottom: 6px;
-  transform: translate(-50%);
   width: 56px;
   height: 56px;
+  animation: zoomOut .7s .7s both, zoomIn 3s ease-out 2s infinite;
 }
 
 .adbro-thuyenxua__boat-img,
@@ -171,13 +214,14 @@ img {
   position: absolute;
   right: 102px;
   bottom: 0;
+  animation: fadeInUp .5s ease-out .9s both;
 }
 
 .adbro-thuyenxua__controls {
   position: absolute;
-  right: 62px;
+  right: 74px;
   bottom: 50px;
-  transform: translate(-50%);
+  animation: rotateIn 0.8s ease-out 3.2s 1 forwards;
 }
 
 .adbro-thuyenxua__controls button {
@@ -194,6 +238,11 @@ img {
 
 .adbro-thuyenxua__close {
   margin-bottom: 7px;
+}
+
+.adbro-thuyenxua__info,
+.adbro-thuyenxua__close {
+  animation: fadeInUp 1s ease-out .4s both;
 }
 
 .adbro-slider {
@@ -272,4 +321,92 @@ img {
   border-radius: 3px;
   border: 1px solid var(--misty-grey);
   text-transform: uppercase;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes shake {
+  0%, 50% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  5%, 15%, 25%, 35%, 45% {
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  10%, 20%, 30%, 40% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.1, 1.1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes swim {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, 10px);
+  }
+  50% {
+    transform: translate(-10px, 0);
+  }
+  75% {
+    transform: translate(-5px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.adbro-thuyenxua__fish-img {
+  animation: swim 2s ease-in-out infinite;
+  transform-origin: center center;
 }
