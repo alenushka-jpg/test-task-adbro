@@ -1,0 +1,178 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --almostWhite: #f6f6f6;
+  --paleGold: #caaa6c;
+  --silver: #c4c4c4;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Heavy', sans-serif;
+  src: url('../font/helvetica-neue-heavy.woff2') format('woff2'),
+    url('../font/helvetica-neue-heavy.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('../font/roboto-medium.woff2') format('woff2'),
+    url('../font/roboto-medium.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('../font/roboto-bold.woff2') format('woff2'),
+    url('../font/roboto-bold.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.container {
+  max-width: 923px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.adbro-thuyenxua {
+  width: 903px;
+  height: 422px;
+  
+}
+
+.adbro-thuyenxua__promo {
+  position: relative;
+  width: 100%;
+  height: 422px;
+  background-color: var(--silver);
+  overflow: hidden;
+}
+
+.adbro-thuyenxua__content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+  padding-left: 80px;
+  padding-right: 72px;
+  width: 700px;
+  background: url('../img/thuyenxua-bg.svg') no-repeat center top;
+  height: 95px;
+  background-size: cover;
+}
+
+.adbro-thuyenxua__choice-btn {
+  padding: 8px 40px;
+  margin-top: 42px;
+  border: 3px solid black;
+  text-transform: uppercase;
+  color: #CAAA6C;
+  font-weight: 700;
+}
+
+.adbro-thuyenxua__bottle-img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  width: 79px;
+  height: 140px;
+}
+
+.adbro-thuyenxua__try-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 27px;
+  color: #FF0F12;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: white;
+  border: none;
+  border-radius: 13px;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: -0.4px;
+}
+
+.adbro-thuyenxua__logo {
+  position: absolute;
+  left: 63.5%;
+  bottom: 6px;
+  transform: translate(-50%);
+  width: 56px;
+  height: 56px;
+}
+
+.adbro-thuyenxua__boat-img,
+.adbro-thuyenxua__boat-img img {
+  width: 116px;
+  height: 85px;
+}
+
+.adbro-thuyenxua__boat-img {
+  position: absolute;
+  right: 102px;
+  bottom: 0;
+}
+
+.adbro-thuyenxua__controls {
+  position: absolute;
+  right: 62px;
+  bottom: 50px;
+  transform: translate(-50%);
+}
+
+.adbro-thuyenxua__controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.adbro-thuyenxua__close {
+  margin-bottom: 7px;
+}
