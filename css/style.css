@@ -200,6 +200,37 @@ img {
   animation: fadeInUp .5s ease-out .9s both;
 }
 
+.adbro-thuyenxua__fish-img {
+  position: absolute;
+  width: 54px;
+  height: 43px;
+}
+
+.adbro-thuyenxua__fish-img:first-of-type {
+  top: -10px;
+  right: 121px;
+  animation: zoomOut .7s .7s both, swim 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(2) {
+  top: -22px;
+  right: 237px;
+  animation: zoomOut .7s .7s both, swim2 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(3) {
+  top: 2px;
+  left: 122px;
+  animation: zoomOut .7s .7s both, swim3 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(4) {
+  top: -10px;
+  left: 218px;
+  animation: zoomOut .7s .7s both, swim4 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+} 
+
+
 .adbro-thuyenxua__controls {
   position: absolute;
   right: 74px;
@@ -230,26 +261,41 @@ img {
 }
 
 .adbro-slider {
-  padding: 14px 8px 14px 15px;
+  position: relative;
+  padding: 14px 7px 14px 10px;
   width: 775px;
   margin: 0 auto 30px;
   border: 1px solid var(--light-grey);
   border-radius: 3px;
+  animation: moveLeft .8s 1.7s ease-in;
 }
 
 .adbro-slider__list {
   display: flex;
-  grid-gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .adbro-slider__item {
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
   filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25)) drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25));
   background-color: var(--white);
   border-radius: 5px;
+  flex-shrink: 0;
+  width: 180px;
+  height: 270px;
+  transition: transform 0.2s;
+}
+
+.adbro-slider__item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .adbro-slider__link {
@@ -261,6 +307,53 @@ img {
   display: block;
   height: 180px;
   width: 180px;
+}
+
+.adbro-slider__arrow {
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  top: 0;
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.adbro-slider__arrow--prev::after,
+.adbro-slider__arrow--next:after {
+  position: absolute;
+  content: '';
+  width: 34px;
+  height: 34px;
+  background: url('../img/slider-arrow.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.adbro-slider__arrow--next:after {
+  top: 7px;
+  right: 0;
+  opacity: .7;
+}
+
+.adbro-slider__arrow--next {
+  right: 8px;
+  top: 100px;
+}
+
+.adbro-slider__arrow--prev {
+  left: 15px;
+  top: 100px;
+}
+
+.adbro-slider__arrow--prev::after {
+  transform: rotate(180deg);
+  top: 7px;
+  left: 0;
 }
 
 .adbro-slider__slide-img {
@@ -298,6 +391,7 @@ img {
 
 .adbro-slider__btn {
   display: block;
+  width: 167px;
   padding: 10px 44px;
   margin-bottom: 10px;
   background-color: var(--almost-white);
@@ -517,32 +611,14 @@ img {
   }
 }
 
-.adbro-thuyenxua__fish-img {
-  position: absolute;
-  width: 54px;
-  height: 43px;
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-
-.adbro-thuyenxua__fish-img:first-of-type {
-  top: -10px;
-  right: 121px;
-  animation: zoomOut .7s .7s both, swim 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
-}
-
-.adbro-thuyenxua__fish-img:nth-of-type(2) {
-  top: -22px;
-  right: 237px;
-  animation: zoomOut .7s .7s both, swim2 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
-}
-
-.adbro-thuyenxua__fish-img:nth-of-type(3) {
-  top: 2px;
-  left: 122px;
-  animation: zoomOut .7s .7s both, swim3 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
-}
-
-.adbro-thuyenxua__fish-img:nth-of-type(4) {
-  top: -10px;
-  left: 218px;
-  animation: zoomOut .7s .7s both, swim4 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
-} 
