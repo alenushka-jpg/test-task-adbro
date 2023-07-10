@@ -5,10 +5,11 @@
   --almost-white: #f6f6f6;
   --light-grey: #dedede;
   --misty-grey: #c2c2c2; 
+  --muted-gray: #aaaaaa;
   --pale-gold: #caaa6c;
   --silver: #c4c4c4;
   --vivid-red: #ff0f12;
-
+  --vibrant-blue: #027bff;
 }
 
 @font-face {
@@ -87,6 +88,15 @@ img {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .adbro-thuyenxua {
@@ -207,6 +217,7 @@ img {
   border: none;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .adbro-thuyenxua__close {
@@ -285,7 +296,6 @@ img {
   margin: 0 auto;
 }
 
-
 .adbro-slider__btn {
   display: block;
   padding: 10px 44px;
@@ -294,6 +304,92 @@ img {
   border-radius: 3px;
   border: 1px solid var(--misty-grey);
   text-transform: uppercase;
+}
+
+.adbro-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.adbro-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.adbro-modal__popup {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  padding: 27px 37px 60px;
+  background-color: var(--white);
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+.adbro-modal__logo {
+  margin-bottom: 30px;
+}
+
+.adbro-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.adbro-modal__text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.adbro-modal__text p + p {
+  margin-top: 12px;
+}
+
+.adbro-modal__text a {
+  display: inline;
+  color: var(--vibrant-blue);
+  text-decoration: none;
+}
+
+.adbro-modal__close::before,
+.adbro-modal__close::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 9px;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--muted-gray);
+}
+
+.adbro-modal__close::after {
+  transform: rotate(45deg);
+}
+
+.adbro-modal__close::before {
+  transform: rotate(-45deg);
 }
 
 @keyframes fadeInUp {
@@ -405,7 +501,6 @@ img {
     transform: translate(10px, 5px);
   }
 }
-
 
 @keyframes swim4 {
   0%, 100% {
