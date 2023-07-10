@@ -150,33 +150,6 @@ img {
   animation: fadeInUp .8s ease-out .5s both;
 }
 
-.adbro-thuyenxua__fish-img {
-  position: absolute;
-}
-
-.adbro-thuyenxua__fish-img:first-of-type {
-  top: -10px;
-  right: 121px;
-}
-
-.adbro-thuyenxua__fish-img:nth-of-type(2) {
-  top: -22px;
-  right: 237px;
-  transform: rotate(45deg);
-}
-
-.adbro-thuyenxua__fish-img:nth-of-type(3) {
-  top: 0px;
-  left: 122px;
-  transform: rotate(-3deg) scale(-1, 1);
-}
-
-.adbro-thuyenxua__fish-img:nth-of-type(4) {
-  top: -10px;
-  left: 218px;
-  transform: rotate(-51deg) scale(-1, 1);
-} 
-
 .adbro-thuyenxua__try-btn {
   position: absolute;
   bottom: 15px;
@@ -387,26 +360,94 @@ img {
   }
 }
 
-
 @keyframes swim {
-  0% {
+  0%, 100% {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(-5px, 10px);
+    transform: translate(-10px, 5px);
   }
   50% {
-    transform: translate(-10px, 0);
+    transform: translate(-15px, 0px);
   }
   75% {
-    transform: translate(-5px, -10px);
+    transform: translate(-10px, 5px);
   }
-  100% {
+}
+
+
+@keyframes swim2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  25% {
+    transform: translate(-10px, 5px rotate(45deg));
+  }
+  50% {
+    transform: translate(-15px, 0px) rotate(45deg);
+  }
+  75% {
+    transform: translate(-10px, 5px) rotate(45deg);
+  }
+}
+
+@keyframes swim3 {
+  0%, 100% {
     transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 5px);
+  }
+  50% {
+    transform: translate(15px, 0px);
+  }
+  75% {
+    transform: translate(10px, 5px);
+  }
+}
+
+
+@keyframes swim4 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-43deg);
+  }
+  25% {
+    transform: translate(10px, 5px rotate(-43deg));
+  }
+  50% {
+    transform: translate(15px, 0px) rotate(-43deg);
+  }
+  75% {
+    transform: translate(10px, 5px) rotate(-43deg);
   }
 }
 
 .adbro-thuyenxua__fish-img {
-  animation: swim 2s ease-in-out infinite;
-  transform-origin: center center;
+  position: absolute;
+  width: 54px;
+  height: 43px;
 }
+
+.adbro-thuyenxua__fish-img:first-of-type {
+  top: -10px;
+  right: 121px;
+  animation: zoomOut .7s .7s both, swim 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(2) {
+  top: -22px;
+  right: 237px;
+  animation: zoomOut .7s .7s both, swim2 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(3) {
+  top: 2px;
+  left: 122px;
+  animation: zoomOut .7s .7s both, swim3 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+}
+
+.adbro-thuyenxua__fish-img:nth-of-type(4) {
+  top: -10px;
+  left: 218px;
+  animation: zoomOut .7s .7s both, swim4 3s cubic-bezier(0.32, 0.04, 0.15, 0.97) infinite;
+} 
